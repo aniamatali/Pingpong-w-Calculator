@@ -111,4 +111,8 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+  $('#time').text(moment());
+});
+
 },{"../js/calculator.js":1,"./../js/pingpong.js":2}]},{},[3]);
