@@ -48,6 +48,7 @@ gulp.task("build", ['clean'], function(){
   } else {
     gulp.start('jsBrowserify');
   }
+  gulp.start('bower');
 });
 
 gulp.task("build", function(){
@@ -80,3 +81,5 @@ gulp.task('bowerCSS', function () {
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./build/css'));
 });
+
+gulp.task('bower', ['bowerJS', 'bowerCSS']);
