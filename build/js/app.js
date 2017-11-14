@@ -58,16 +58,16 @@ var Calculate = require('../js/calculator.js').calculatorModule;
 $(document).ready(function() {
   $("#calcInput").submit(function(event) {
     event.preventDefault();
-        var operator = $("input:radio[name=operator]:checked").val();
-        var number1 = parseInt($("#valInput").val());
-        var number2 = parseInt($("#valInput2").val());
-        var thisCalculate = new Calculate();
-        var output1 = thisCalculate.Add(number1, number2);
-        var output2 = thisCalculate.Subtract(number1, number2);
-        var output3 = thisCalculate.Multiply(number1, number2);
-        var output4 = thisCalculate.Divide(number1, number2);
-        var output5 = thisCalculate.Exponent(number1, number2);
-        var output6 = thisCalculate.Percent(number1, number2);
+        const operator = $("input:radio[name=operator]:checked").val();
+        const number1 = parseInt($("#valInput").val());
+        const number2 = parseInt($("#valInput2").val());
+        const thisCalculate = new Calculate();
+        const output1 = thisCalculate.Add(number1, number2);
+        const output2 = thisCalculate.Subtract(number1, number2);
+        const output3 = thisCalculate.Multiply(number1, number2);
+        const output4 = thisCalculate.Divide(number1, number2);
+        const output5 = thisCalculate.Exponent(number1, number2);
+        const output6 = thisCalculate.Percent(number1, number2);
 
         if (operator === "add") {
           $("#output").prepend("<li>"+output1+"</li>");
