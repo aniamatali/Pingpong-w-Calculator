@@ -1,5 +1,7 @@
 function Calculate() {
 
+const output = 10000;
+
   if (operator === "add") {
     let output = thisCalculate.Add(number1, number2);
     $("#output1").prepend("<li>"+output+"</li>");
