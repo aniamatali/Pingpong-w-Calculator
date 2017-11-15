@@ -8,6 +8,7 @@ var buildProduction = utilities.env.production;
 var del = require('del');
 var jshint = require('gulp-jshint');
 var browserSync = require('browser-sync').create();
+var babelify = require("babelify");
 var lib = require('bower-files')({
   "overrides":{
     "bootstrap" : {
@@ -19,6 +20,7 @@ var lib = require('bower-files')({
     }
   }
 });
+
 
 gulp.task('myTask', function(){
   console.log('hello gulp');
@@ -102,4 +104,14 @@ gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
 
 gulp.task('bowerBuild', ['bower'], function(){
   browserSync.reload();
+});
+
+gulp.task('jsBrowserify', ['concatInterface'], function() {
+  return browserify({ entries: ['./tmp/allConcat.js']})
+    .transform(babelify.configure({
+      presets: ["es2015"]
+    }))
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./build/js'))
 });

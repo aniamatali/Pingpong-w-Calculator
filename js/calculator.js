@@ -1,29 +1,20 @@
-function Calculate() {
-
+export class Calculate {
+  Add(number1, number2) {
+    return number1 + number2
+  }
+  Subtract(number1, number2){
+    return number1 - number2
+  }
+  Multiply(number1, number2){
+    return number1 * number2
+  }
+  Divide(number1, number2){
+    return number1 / number2
+  }
+  Exponent(number1, number2){
+    return number1 ** number2;
+  }
+  Percent(number1, number2){
+    return number2 / 100;
+  }
 }
-
-Calculate.prototype.Add = function(number1, number2) {
-  return number1 + number2;
-};
-
-Calculate.prototype.Subtract = function(number1, number2) {
-  return number1 - number2;
-};
-
-Calculate.prototype.Multiply = function(number1, number2) {
-  return number1 * number2;
-};
-
-Calculate.prototype.Divide = function(number1, number2) {
-  return number1 / number2;
-};
-
-Calculate.prototype.Exponent = function(number1, number2) {
-  return number1 ** number2;
-};
-
-Calculate.prototype.Percent = function(number1, number2) {
-  return number2 / 100;
-};
-
-exports.calculatorModule = Calculate;

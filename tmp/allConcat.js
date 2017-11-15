@@ -1,4 +1,4 @@
-var Calculate = require('../js/calculator.js').calculatorModule;
+import {Calculate} from './../js/calculator.js';
 
 $(document).ready(function() {
   $("#calcInput").submit(function(event) {
@@ -28,7 +28,6 @@ $(document).ready(function() {
       let output = thisCalculate.Percent(number1, number2);
       $("#output6").prepend("<li>"+output+"</li>");
     }
-
       });
 
     });
